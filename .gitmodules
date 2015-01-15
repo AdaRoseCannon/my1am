@@ -1,0 +1,3 @@
+[submodule "app/cardboard"]
+	path = app/cardboard
+	url = git@github.com:AdaRoseEdwards/SoundThing.git
