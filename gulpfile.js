@@ -127,6 +127,7 @@ gulp.task('default', ['clean'], function () {
 gulp.task('deploy', ['build'], function () {
 	return gulp.src('./dist/**/*')
 		.pipe(require('gulp-gh-pages')({
-			remoteUrl: 'ssh://ada@ssh.1am.club/~/public_html/.git'
+			origin: 'deploytarget',
+			branch: 'master'
 		}));
 });
