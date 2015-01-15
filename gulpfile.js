@@ -55,7 +55,7 @@ gulp.task('fonts', function () {
 
 gulp.task('extras', function () {
 	return gulp.src([
-		'app/*.*',
+		'app/**/*',
 		'!app/*.html',
 		'node_modules/apache-server-configs/dist/.htaccess'
 	], {
@@ -127,7 +127,8 @@ gulp.task('default', ['clean'], function () {
 gulp.task('deploy', ['build'], function () {
 	return gulp.src('./dist/**/*')
 		.pipe(require('gulp-gh-pages')({
-			origin: 'deploytarget',
+			origin: 'ssh://ada@ssh.1am.club/~/public_html/.git',
+			remoteUrl: 'ssh://ada@ssh.1am.club/~/public_html/.git',
 			branch: 'master'
 		}));
 });
