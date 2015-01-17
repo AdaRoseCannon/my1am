@@ -1,0 +1,46 @@
+body {
+	background-color: $ada-pink;
+	background: url("../images/pattern.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.content {
+	padding: 3em;
+}
+
+li.magic {
+	padding: 1em;
+	border-radius: 1em;
+	background: white;
+	list-style: none;
+	margin-bottom: 1em;
+	&:after {
+		content: " ";
+		clear: both;
+		display: block;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+}
+
+.icon {
+	position:relative;
+	display: inline-block;
+	float: left;
+	transition-property: transform, width, height, box-shadow, background-color, border, border-radius;
+	transition-duration: 2s,        2s,    2s,     2s,         0.5s,               2s,     2s;
+	transition-delay:    0s         0s,    0s,     0s,         0s,                 0s,     0s;
+	transition-timing-function: ceaser($resizeAnim);
+	border-width: 0.2em;
+	width: 2.5em;
+	height: 2.5em;
+	background: $c1;
+	margin-right: 0.5em;
+	border-radius: 50%;
+
+	a:hover & {
+		background: yellow;
+	}
+}

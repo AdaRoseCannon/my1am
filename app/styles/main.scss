@@ -2,27 +2,42 @@
 @import "ceaser-easing";
 
 html, body, .container, .row {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-  font-family: 'Open Sans', 'sans-serif';
-  font-weight: 400;
-  color: $font-color;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	width: 100%;
+	font-family: 'Open Sans', 'sans-serif';
+	font-weight: 400;
+	color: $font-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  clear: both;
-}
-
-.row > div {
-  transition: width 600ms ceaser($resizeAnim);
+	font-weight: 300;
+	clear: both;
 }
 
 .center {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
+
+
+a {
+	color: #428bca;
+	text-decoration: none;
+
+	&:hover, &:focus {
+		color: #2a6496;
+		text-decoration: underline;
+	}
+
+	&:focus {
+		outline: thin dotted;
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+}
+
+@import "layout";
