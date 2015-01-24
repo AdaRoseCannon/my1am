@@ -22,6 +22,7 @@ li.magic {
 	}
 	h1, h2, h3, h4, h5, h6 {
 		margin: 0;
+		clear: none;
 	}
 }
 
@@ -31,45 +32,55 @@ li.magic {
 	float: left;
 	transition-timing-function: ceaser($resizeAnim);
 	border-width: 0.2em;
-	width: 2.5em;
-	height: 2.5em;
+	width: 1.8em;
+	height: 1.8em;
 	background: $c1;
 	margin-right: 0.5em;
 	border-radius: 50%;
-
+	color: white;
+	font-size: 1.5em;
 
 	&:after, &:before {
 		position: absolute;
-		content: '';
-		transform: $t0;
+		transform: $t0 rotate(0deg);
 		top: 50%;
 		left: 50%;
-		transition-property: transform, width, height, box-shadow, background-color, border, border-radius;
-		transition-duration: 2s,        2s,    2s,     2s,         0.5s,               2s,     2s;
-		transition-delay:    0s         0s,    0s,     0s,         0s,                 0s,     0s;
+		transition-property: transform, width, height, box-shadow, background-color, border, border-radius, opacity;
+		transition-duration: 0.5s,        2s,    2s,     2s,         0.5s,             2s,     2s,            0.5s;
+		transition-delay:    0s           0s,    0s,     0s,         0s,               0s,     0s,            0.5s;
 		border-width: 0.2em;
-		opacity: 0;
-		width: 0.1em;
-		height: 0.1em;
 	}
 
-	&.folder:before, &.folder:after {
-		background: $ada-pink;
-		content: "";
-		opacity: 1;
-		width: 1.5em;
-		height: 1.2em;
-		border-radius: 0.2em 0 0.2em 0.2em;
-		display: block;
-		transform: $t0 translateY(0.1em);
+	&.fa-folder {
+		&:after {
+			opacity: 0;
+			content: $fa-var-folder-open;
+		}
+		&:before {
+			opacity: 1;
+			content: $fa-var-folder;
+		}	
 	}
 
-	&.folder:after {
-		background: darken($ada-pink, 10%);
-		transform: $t0 translateY(0.1em);
+	a:hover + &.fa-folder {
+		&:before {
+			opacity: 0;
+			transform: $t0 rotate(-10deg);
+		}
+		&:after {
+			opacity: 1;
+			transform: $t0 rotate(-20deg);
+		}
 	}
 
-	a:hover & {
-		background: yellow;
+	&.fa-link {
+		&:after {
+			opacity: 0;
+			content: $fa-var-external-link;
+		}
+		&:before {
+			opacity: 1;
+			content: $fa-var-external-link;
+		}	
 	}
 }
